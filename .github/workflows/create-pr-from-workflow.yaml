@@ -25,7 +25,7 @@ jobs:
             ------
           
             *Automatically generated PR using GitHub Actions workflow*
-          branch: main
+          branch: github-actions/test
           title: "Test creating a new PR"
           body: |-
             This is a test.
