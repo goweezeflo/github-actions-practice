@@ -12,6 +12,9 @@ jobs:
         run: |-
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
+      - name: Make a change
+        run: |-
+          date >> README.md
       - name: Create Pull Request
         id: create-pr
         uses: peter-evans/create-pull-request@v6
