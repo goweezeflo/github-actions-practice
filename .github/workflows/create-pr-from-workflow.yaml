@@ -25,6 +25,7 @@ jobs:
             
               [Workflow Run]: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
               [actor_id]: ${{ github.actor_id }}
+              [actor]: ${{ github.actor }}
               [triggering_actor]: ${{ github.triggering_actor }}
               [workspace]: ${{ github.workspace }}
 
@@ -35,11 +36,11 @@ jobs:
           title: "Test creating a new PR"
           body: |-
             Test commit
-            
-              [Workflow Run]: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-              [actor_id]: ${{ github.actor_id }}
-              [triggering_actor]: ${{ github.triggering_actor }}
-              [workspace]: ${{ github.workspace }}
+            - [Workflow Run]: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            - [actor_id]: ${{ github.actor_id }}
+            - [actor]: ${{ github.actor }}
+            - [triggering_actor]: ${{ github.triggering_actor }}
+            - [workspace]: ${{ github.workspace }}
 
             ------
             
