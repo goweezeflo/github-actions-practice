@@ -23,7 +23,10 @@ jobs:
           commit-message: |-
             Test commit
             
-             [Workflow Run]: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+              [Workflow Run]: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+              [actor_id]: ${{ github.actor_id }}
+              [triggering_actor]: ${{ github.triggering_actor }}
+              [workspace]: ${{ github.workspace }}
 
             ------
           
@@ -31,13 +34,16 @@ jobs:
           branch: github-actions/test
           title: "Test creating a new PR"
           body: |-
-            This is a test.
-
-            [Workflow Run]: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            Test commit
+            
+              [Workflow Run]: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+              [actor_id]: ${{ github.actor_id }}
+              [triggering_actor]: ${{ github.triggering_actor }}
+              [workspace]: ${{ github.workspace }}
 
             ------
-
-            *Automatically created by projen via the "upgrade" workflow*
+            
+            *Automatically generated PR using GitHub Actions workflow*
           author: github-actions <github-actions@github.com>
           committer: github-actions <github-actions@github.com>
           signoff: true
