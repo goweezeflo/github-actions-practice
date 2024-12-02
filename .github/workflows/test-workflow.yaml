@@ -1,0 +1,25 @@
+on:
+  workflow_dispatch:
+jobs:
+  setup_node:
+    name: Setup Node.js 22
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Configure git identity
+        run: |-
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install project dependencies
+        run: npm update -g npm && npm ci
+  install_cdk:
+    needs: setup_node
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install AWS CDK v2
+        run: npm install -g aws-cdk
